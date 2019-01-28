@@ -77,6 +77,79 @@ public class TreeMap
         }
     }
 
+    public Comparable findMin()
+    {
+        if (root == null)
+        {
+            return null;
+        }
+        return findMin(root);
+    }
+
+    private Comparable findMin(Node current)
+    {
+        if (current.left == null)
+        {
+            return current.key;
+        }
+        return findMin(current.left);
+    }
+
+    public Comparable findMax()
+    {
+        if (root == null)
+        {
+            return null;
+        }
+        return findMax(root);
+    }
+
+    private Comparable findMax(Node current)
+    {
+        if (current.right == null)
+        {
+            return current.key;
+        }
+        return findMin(current.right);
+    }
+
+    public int depth(Comparable search)
+    {
+        if (root == null)
+        {
+            return -1;
+        }
+        return depth(root, search, 0);
+    }
+
+    private int depth(Node current, Comparable search, int count)
+    {
+        //base case!
+        if (current == null)
+        {
+            return -1;
+        }
+
+        int compare = search.compareTo(current.key);
+        if (compare == 0) //base case!
+        {
+            return count;
+        }
+        else if (compare < 0)
+        {
+            return depth(current.left, search, count + 1);
+        }
+        else //compare > 0
+        {
+            return depth(current.right, search, count + 1);
+        }
+    }
+
+    public int height(Node current)
+    {
+        return -1;
+    }
+
     private class Node
     {
         //data in the node

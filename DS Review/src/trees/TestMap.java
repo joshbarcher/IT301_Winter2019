@@ -20,5 +20,16 @@ public class TestMap
         System.out.println(namesToAges.get("Bill"));
         System.out.println(namesToAges.get("Sarah"));
         System.out.println(namesToAges.get("Todd"));
+        System.out.println();
+
+        //test findMin()
+        System.out.println(namesToAges.findMin());
+        System.out.println(namesToAges.findMax());
+
+        //test depth()
+        System.out.println("Anna: " + namesToAges.depth("Anna"));
+        System.out.println("Bill: " + namesToAges.depth("Bill"));
+        System.out.println("Sarah: " + namesToAges.depth("Sarah"));
+        System.out.println("Todd: " + namesToAges.depth("Todd"));
     }
 }
