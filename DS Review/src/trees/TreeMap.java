@@ -48,6 +48,35 @@ public class TreeMap
         return current;
     }
 
+    public Object get(Comparable key)
+    {
+        return get(root, key);
+    }
+
+    private Object get(Node current, Comparable key)
+    {
+        //base case, the spot where the key should be is missing
+        if (current == null)
+        {
+            return null;
+        }
+
+        //otherwise we search down the tree
+        int compare = key.compareTo(current.key);
+        if (compare == 0)
+        {
+            return current.value; //we found it, return the value
+        }
+        else if (compare < 0)
+        {
+            return get(current.left, key);
+        }
+        else //compare > 0
+        {
+            return get(current.right, key);
+        }
+    }
+
     private class Node
     {
         //data in the node

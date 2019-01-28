@@ -14,5 +14,11 @@ public class TestMap
         {
             namesToAges.add(keys[i], values[i]);
         }
+
+        //test that I can find values using keys
+        System.out.println(namesToAges.get("Anna"));
+        System.out.println(namesToAges.get("Bill"));
+        System.out.println(namesToAges.get("Sarah"));
+        System.out.println(namesToAges.get("Todd"));
     }
 }
