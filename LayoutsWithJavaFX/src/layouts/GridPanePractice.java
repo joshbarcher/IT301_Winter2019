@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 
 public class GridPanePractice extends Application
 {
-
     public static final int WIN_SIZE = 600;
 
     @Override
