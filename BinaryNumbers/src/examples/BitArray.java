@@ -31,6 +31,11 @@ public class BitArray
         return (flags & mask) != 0;
     }
 
+    public void toggle(int index)
+    {
+        setBit(index, !getBit(index));
+    }
+
     public void printBitArray()
     {
         for (int i = MAX_INDEX; i >= 0; i--)
